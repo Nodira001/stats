@@ -17,19 +17,3 @@ func Avg(payment []types.Payment) types.Money {
 
 }
 
-func TotalInCategory(payments []types.Payment, category types.Category) types.Money {
-	sum := types.Money(0)
-	for _, payment := range payments {
-		if payment.Status == types.StatusFail {
-			continue
-		}
-
-		if payment.Category == category {
-			sum += payment.Amount
-
-		}
-
-	}
-	return sum
-
-}
